@@ -1331,3 +1331,40 @@ async function sairDaConta() {
   );
 
 }
+
+// ==========================================
+// RETORNO DO MERCADO PAGO
+// ==========================================
+
+(async function verificarRetornoMercadoPago() {
+  const parametros = new URLSearchParams(window.location.search);
+  const status = parametros.get("pagamento");
+
+  if (!status) return;
+
+  if (status === "sucesso") {
+    try {
+      const temAcesso = await verificarAcesso();
+
+      if (temAcesso) {
+        mostrarTela("aluno");
+      } else {
+        mostrarTela("pagamento");
+      }
+    } catch (erro) {
+      console.error("Erro ao verificar pagamento:", erro);
+      mostrarTela("pagamento");
+    }
+  } else {
+    mostrarTela("pagamento");
+  }
+
+  parametros.delete("pagamento");
+
+  const novaUrl =
+    window.location.pathname +
+    (parametros.toString() ? "?" + parametros.toString() : "") +
+    window.location.hash;
+
+  window.history.replaceState({}, document.title, novaUrl);
+})();
