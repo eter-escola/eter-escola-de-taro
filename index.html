@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eaf6ff">
+  <meta name="description" content="Éter — Escola de Tarô. Uma jornada de conhecimento e autoconhecimento.">
+  <title>Éter | Escola de Tarô</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topo">
+    <a class="logo" href="#inicio" onclick="mostrarTela('inicio')">
+      ÉTER
+      <small>ESCOLA DE TARÔ</small>
+    </a>
+
+    <nav>
+      <a href="#inicio" onclick="mostrarTela('inicio')">Início</a>
+      <a href="#" onclick="abrirCurso(); return false;">Meu curso</a>
+      <a href="#cartas" onclick="mostrarTela('inicio')">As cartas</a>
+      <a href="#sobre" onclick="mostrarTela('inicio')">Sobre</a>
+    </nav>
+
+    <button class="botao-entrar" onclick="entrar()">
+      Entrar <span>✧</span>
+    </button>
+  </header>
+
+  <main>
+
+    <!-- PÁGINA INICIAL -->
+
+    <section class="hero" id="inicio">
+      <div class="luz-celestial"></div>
+
+      <div class="hero-texto">
+        <span class="sobretitulo">✧ UM UNIVERSO DE SABEDORIA ✧</span>
+
+        <h1>
+          Descubra a<br>
+          <em>magia</em> que existe<br>
+          em você.
+        </h1>
+
+        <p>
+          Uma jornada pelo universo do Tarô,
+          seus símbolos, mistérios e ensinamentos.
+        </p>
+
+        <a href="#" class="botao-principal"
+           onclick="abrirCurso(); return false;">
+          CONHECER MEU CURSO <span>→</span>
+        </a>
+      </div>
+
+      <div class="ceu-cenario">
+        <div class="luz-celestial"></div>
+        <div class="sol"></div>
+        <div class="nuvem nuvem-1"></div>
+        <div class="nuvem nuvem-2"></div>
+        <div class="nuvem nuvem-3"></div>
+        <div class="nuvem nuvem-4"></div>
+        <div class="nuvem nuvem-5"></div>
+        <div class="montanha montanha-1"></div>
+        <div class="montanha montanha-2"></div>
+
+        <div class="templo">
+          <div class="templo-telhado"></div>
+          <div class="templo-triangulo"></div>
+          <div class="templo-friso"></div>
+          <div class="templo-colunas">
+            <div class="coluna"></div>
+            <div class="coluna"></div>
+            <div class="coluna"></div>
+            <div class="coluna"></div>
+            <div class="coluna"></div>
+            <div class="coluna"></div>
+          </div>
+          <div class="templo-base"></div>
+          <div class="templo-degrau"></div>
+        </div>
+
+        <div class="templo-distante">
+          <div class="distante-telhado"></div>
+          <div class="distante-colunas">
+            <i></i><i></i><i></i><i></i>
+          </div>
+          <div class="distante-base"></div>
+        </div>
+
+        <span class="estrela estrela-1">✧</span>
+        <span class="estrela estrela-2">✦</span>
+        <span class="estrela estrela-3">✧</span>
+        <span class="estrela estrela-4">✦</span>
+
+        <div class="selo-celestial"><span>✧</span></div>
+        <div class="nuvens-frente"></div>
+      </div>
+
+      <div class="indicador">
+        <span>✧</span>
+        UMA JORNADA DE AUTOCONHECIMENTO
+        <span>✧</span>
+      </div>
+    </section>
+
+    <!-- SOBRE -->
+
+    <section class="sobre" id="sobre">
+      <span class="sobretitulo">UM CAMINHO DE DESCOBERTAS</span>
+      <h2>Entre em um universo de possibilidades.</h2>
+      <p>
+        O Tarô é uma linguagem de símbolos, arquétipos e histórias.
+        Aqui você aprende a compreender suas cartas e desenvolver
+        sua própria forma de interpretar cada leitura.
+      </p>
+    </section>
+
+    <!-- APRESENTAÇÃO DAS CARTAS -->
+
+    <section class="cartas" id="cartas">
+      <span class="sobretitulo">O UNIVERSO DOS ARCANOS</span>
+      <h2>Conheça as 78 cartas</h2>
+      <p>
+        Cada carta tem uma história e diferentes possibilidades
+        de interpretação.
+      </p>
+
+      <div class="cartas-grid">
+
+        <!-- ARCANOS MAIORES -->
+
+        <article class="carta-card">
+          <div class="carta-simbolo">☼</div>
+          <h3>Arcanos Maiores</h3>
+          <p>22 cartas que representam grandes arquétipos e jornadas.</p>
+
+          <button
+            type="button"
+            aria-controls="descricao-maiores"
+            aria-expanded="false"
+            onclick="
+              const texto = document.getElementById('descricao-maiores');
+              const aberto = texto.hidden;
+              texto.hidden = !aberto;
+              texto.style.display = aberto ? 'block' : 'none';
+              this.setAttribute('aria-expanded', aberto);
+              this.textContent = aberto ? 'Fechar explicação ↑' : 'Conhecer os Arcanos →';
+            ">
+            Conhecer os Arcanos →
+          </button>
+
+          <div id="descricao-maiores" hidden style="display:none; margin-top:20px;">
+            <p>
+              Os 22 Arcanos Maiores representam grandes temas e
+              experiências da jornada humana. Cada carta apresenta
+              símbolos e ensinamentos relacionados ao autoconhecimento,
+              às transformações, aos desafios e às diferentes etapas
+              da vida.
+            </p>
+
+            <p>
+              São cartas que ajudam a compreender questões mais profundas
+              e os movimentos importantes da nossa trajetória.
+            </p>
+          </div>
+        </article>
+
+        <!-- ARCANOS MENORES -->
+
+        <article class="carta-card">
+          <div class="carta-simbolo">✧</div>
+          <h3>Arcanos Menores</h3>
+          <p>56 cartas relacionadas às experiências e situações da vida.</p>
+
+          <button
+            type="button"
+            aria-controls="descricao-menores"
+            aria-expanded="false"
+            onclick="
+              const texto = document.getElementById('descricao-menores');
+           const menoresAberto = texto.hidden;
+     texto.hidden = !menoresAberto;
+       texto.style.display = menoresAberto ? 'block' : 'none';
+             this.setAttribute('aria-expanded', menoresAberto);
+            this.textContent = menoresAberto ? 'Fechar explicação ↑' : 'Conhecer os Arcanos →';
+            ">
+            Conhecer os Arcanos →
+          </button>
+
+          <div id="descricao-menores" hidden style="display:none; margin-top:20px;">
+            <p>
+              Os 56 Arcanos Menores representam situações, sentimentos,
+              pensamentos e acontecimentos do cotidiano. Eles ajudam
+              a compreender como as energias se manifestam nas diferentes
+              áreas da vida.
+            </p>
+
+            <p>São divididos em quatro naipes:</p>
+
+            <p>
+              <strong>Paus:</strong> ação, criatividade, iniciativa e energia.
+            </p>
+
+            <p>
+              <strong>Copas:</strong> sentimentos, emoções e relacionamentos.
+            </p>
+
+            <p>
+              <strong>Espadas:</strong> pensamentos, decisões e desafios.
+            </p>
+
+            <p>
+              <strong>Ouros:</strong> trabalho, dinheiro, realizações e vida material.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- LOGIN -->
+
+    <section class="tela-interna" id="tela-login" hidden>
+      <div class="painel">
+        <span class="sobretitulo">✧ BEM-VINDO AO ÉTER ✧</span>
+        <h2>Entrar na sua conta</h2>
+        <p>Acesse sua jornada de aprendizado.</p>
+
+        <form onsubmit="return fazerLogin(event)">
+          <label for="login-email">E-mail</label>
+          <input type="email" id="login-email"
+            placeholder="Seu e-mail" autocomplete="email" required>
+
+          <label for="login-senha">Senha</label>
+          <input type="password" id="login-senha"
+            placeholder="Sua senha" autocomplete="current-password" required>
+
+          <button type="submit" class="botao-principal">
+            ENTRAR NA MINHA CONTA →
+          </button>
+        </form>
+
+        <p>Ainda não tem uma conta?</p>
+        <a href="#" onclick="mostrarTela('cadastro'); return false;">
+          Criar minha conta
+        </a>
+
+        <button class="botao-voltar" onclick="mostrarTela('inicio')">
+          Voltar ao início
+        </button>
+      </div>
+    </section>
+
+    <!-- CADASTRO -->
+
+    <section class="tela-interna" id="tela-cadastro" hidden>
+      <div class="painel">
+        <span class="sobretitulo">✧ SUA JORNADA COMEÇA AQUI ✧</span>
+        <h2>Criar minha conta</h2>
+        <p>Preencha seus dados para fazer parte do Éter.</p>
+
+        <form onsubmit="return fazerCadastro(event)">
+          <label for="cadastro-nome">Nome completo</label>
+          <input type="text" id="cadastro-nome"
+            placeholder="Seu nome completo" autocomplete="name" required>
+
+          <label for="cadastro-nascimento">Data de nascimento</label>
+          <input type="date" id="cadastro-nascimento" required>
+
+          <label for="cadastro-cpf">CPF</label>
+          <input type="text" id="cadastro-cpf"
+            placeholder="Seu CPF" required>
+
+          <label for="cadastro-email">E-mail</label>
+          <input type="email" id="cadastro-email"
+            placeholder="Seu e-mail" autocomplete="email" required>
+
+          <label for="cadastro-telefone">Telefone / WhatsApp</label>
+          <input type="tel" id="cadastro-telefone"
+            placeholder="Seu telefone" autocomplete="tel" required>
+
+          <label for="cadastro-senha">Criar senha</label>
+          <input type="password" id="cadastro-senha"
+            placeholder="Mínimo de 8 caracteres" autocomplete="new-password" required>
+
+          <label for="cadastro-confirmacao">Confirmar senha</label>
+          <input type="password" id="cadastro-confirmacao"
+            placeholder="Digite a senha novamente" autocomplete="new-password" required>
+
+          <button type="submit" class="botao-principal">
+            CRIAR MINHA CONTA →
+          </button>
+        </form>
+
+        <p>Já possui cadastro?</p>
+        <a href="#" onclick="mostrarTela('login'); return false;">
+          Entrar na minha conta
+        </a>
+
+        <button class="botao-voltar" onclick="mostrarTela('inicio')">
+          Voltar ao início
+        </button>
+      </div>
+    </section>
+
+    <!-- PAGAMENTO -->
+
+    <section class="tela-interna" id="tela-pagamento" hidden>
+      <div class="painel">
+        <span class="sobretitulo">✧ CONTINUE SUA JORNADA ✧</span>
+        <h2>Adquira seu acesso</h2>
+        <p>
+          Faça o pagamento único e tenha acesso permanente
+          ao Curso Éter.
+        </p>
+
+        <div class="resumo-compra">
+          <h3>Curso completo de Tarô</h3>
+          <p>Formação com os 78 arcanos</p>
+          <strong>R$ 19,90</strong>
+          <small>Pagamento único • Acesso permanente</small>
+        </div>
+
+        <p>Escolha uma forma de pagamento:</p>
+
+        <label class="opcao-pagamento">
+          <input type="radio" name="pagamento" value="pix" checked>
+          <span>Pix</span>
+        </label>
+
+        <label class="opcao-pagamento">
+          <input type="radio" name="pagamento" value="cartao">
+          <span>Cartão de crédito</span>
+        </label>
+
+        <button class="botao-principal" type="button"
+          onclick="iniciarPagamento()">
+          CONTINUAR PARA PAGAMENTO →
+        </button>
+
+        <p class="aviso-pagamento">
+          O pagamento será processado com segurança pelo Mercado Pago.
+        </p>
+
+        <button class="botao-voltar" onclick="mostrarTela('login')">
+          Voltar ao login
+        </button>
+      </div>
+    </section>
+
+    <!-- ÁREA DO ALUNO -->
+
+    <section class="tela-interna" id="tela-aluno" hidden>
+      <div class="painel">
+        <span class="sobretitulo">✧ SEU ESPAÇO CELESTIAL ✧</span>
+        <h2>Bem-vindo ao Éter</h2>
+        <p>
+          Seu acesso foi confirmado. Sua jornada pelo universo
+          do Tarô continua aqui.
+        </p>
+
+        <div class="area-aluno-card">
+          <div class="curso-icone">☼</div>
+          <h3>Meu curso de Tarô</h3>
+          <p>
+            Acesse sua formação e acompanhe seus estudos
+            sobre os 78 arcanos.
+          </p>
+          <button onclick="abrirAulas()">
+            ACESSAR AULAS →
+          </button>
+        </div>
+
+        <button class="botao-voltar" onclick="sairDaConta()">
+          Sair da minha conta
+        </button>
+      </div>
+    </section>
+
+    <!-- BIBLIOTECA DOS ARCANOS -->
+
+    <section class="tela-interna" id="tela-arcanos-maiores" hidden>
+      <div class="painel painel-biblioteca">
+        <span class="sobretitulo">✧ A JORNADA DOS ARCANOS ✧</span>
+        <h2>Os 22 Arcanos Maiores</h2>
+        <p>
+          Escolha uma carta para abrir sua aula e aprofundar
+          seus conhecimentos.
+        </p>
+
+        <div id="galeria-arcanos-maiores" class="cartas-grid">
+          <!-- As cartas serão carregadas pelo script.js -->
+        </div>
+
+        <button class="botao-voltar" onclick="mostrarTela('aluno')">
+          Voltar à área do aluno
+        </button>
+      </div>
+    </section>
+
+    <!-- PÁGINA INDIVIDUAL DE ESTUDO DA CARTA -->
+
+    <section class="tela-interna" id="tela-aula-carta" hidden>
+      <div class="painel painel-aula">
+
+        <button class="botao-voltar" onclick="abrirCartas('maiores')">
+          ← Voltar às cartas
+        </button>
+
+        <div id="conteudo-aula-carta">
+          <span class="sobretitulo">✧ ESTUDO DOS ARCANOS ✧</span>
+          <h2 id="aula-carta-titulo">Aula da carta</h2>
+          <p id="aula-carta-introducao">
+            O conteúdo desta carta será apresentado aqui.
+          </p>
+
+          <div id="aula-carta-imagem" class="aula-carta-imagem">
+            <!-- Imagem individual da carta -->
+          </div>
+
+          <div id="aula-carta-conteudo">
+            <!-- Significados e interpretações serão carregados aqui -->
+          </div>
+        </div>
+
+        <div class="navegacao-aulas">
+          <button type="button" id="carta-anterior"
+            onclick="navegarCarta(-1)">
+            ← Carta anterior
+          </button>
+
+          <button type="button" id="proxima-carta"
+            onclick="navegarCarta(1)">
+            Próxima carta →
+          </button>
+        </div>
+
+        <button class="botao-voltar" onclick="abrirCartas('maiores')">
+          Voltar à biblioteca
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- RODAPÉ -->
+
+  <footer>
+    <a class="logo logo-footer" href="#inicio"
+       onclick="mostrarTela('inicio')">
+      ÉTER
+      <small>ESCOLA DE TARÔ</small>
+    </a>
+    <p>Um universo de conhecimento e descobertas.</p>
+    <small>© 2026 Éter — Escola de Tarô</small>
+  </footer>
+
+  <!-- SUPABASE -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>

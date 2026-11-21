@@ -1,0 +1,1462 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+/* ==========================================
+   IDENTIDADE VISUAL — ESCOLA DE TARÔ ÉTER
+   ========================================== */
+:root {
+  --navy: #315777;
+  --blue: #75b9ec;
+  --gold: #d6b46a;
+  --white: #ffffff;
+  --paper: #eaf6ff;
+  --text: #526e88;
+  --soft-blue: #f3f9ff;
+  --light-gold: #f1dfb8;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--navy);
+  background: var(--paper);
+}
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+img {
+  max-width: 100%;
+}
+/* ==========================================
+   CABEÇALHO
+   ========================================== */
+.topo {
+  min-height: 88px;
+  padding: 0 7%;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  background: rgba(8, 32, 62, .55);
+  border-bottom: 1px solid rgba(230, 203, 153, .3);
+  backdrop-filter: blur(12px);
+}
+.logo {
+  color: #f1d69f;
+  font-family: 'Cinzel', serif;
+  font-size: 34px;
+  letter-spacing: 7px;
+  line-height: 1;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.logo small {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  margin-top: 8px;
+}
+nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+nav a {
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+nav a:hover {
+  color: var(--gold);
+}
+.botao-entrar {
+  background: transparent;
+  border: 1px solid var(--gold);
+  color: #f4d99e;
+  padding: 13px 28px;
+  border-radius: 30px;
+  transition: background .2s ease;
+}
+.botao-entrar:hover {
+  background: rgba(214, 180, 106, .15);
+}
+/* ==========================================
+   ABERTURA / HERO
+   ========================================== */
+.hero {
+  min-height: 760px;
+  height: 100vh;
+  max-height: 1050px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 130px 9% 120px;
+  color: white;
+  background: #b9e3ff;
+}
+.ceu-cenario {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image: url("imagens/olimpo.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.ceu-cenario::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(7, 31, 62, .88) 0%,
+      rgba(10, 43, 78, .66) 32%,
+      rgba(10, 43, 78, .12) 68%,
+      rgba(10, 43, 78, .05) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(10, 40, 70, .25),
+      transparent 35%,
+      rgba(10, 40, 70, .08)
+    );
+}
+.ceu-cenario > * {
+  display: none !important;
+}
+.luz-celestial {
+  display: none;
+}
+.hero-texto {
+  position: relative;
+  z-index: 10;
+  max-width: 680px;
+  width: 58%;
+}
+.sobretitulo {
+  display: block;
+  color: #b28b4d;
+  font-size: 10px;
+  letter-spacing: 5px;
+  margin-bottom: 25px;
+}
+.hero .sobretitulo {
+  color: #e5c58b;
+}
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(58px, 6.5vw, 94px);
+  line-height: .96;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+  text-shadow: 0 3px 20px rgba(0, 0, 0, .15);
+}
+.hero h1 em {
+  color: #f0cd89;
+  font-style: normal;
+}
+.hero-texto p {
+  max-width: 450px;
+  color: #e6eff9;
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 35px;
+}
+.botao-principal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 17px 30px;
+  border: 1px solid #d6b46a;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #f4dfad, #d6b46a);
+  color: #315777;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: background .2s ease, box-shadow .2s ease;
+}
+.botao-principal:hover {
+  background: #e8cc8d;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .12);
+}
+.indicador {
+  position: absolute;
+  z-index: 12;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  color: white;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  white-space: nowrap;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+}
+.indicador span {
+  color: #e8c98d;
+  font-size: 20px;
+}
+/* ==========================================
+   SEÇÕES PÚBLICAS
+   ========================================== */
+.sobre {
+  padding: 110px 10%;
+  text-align: center;
+  background: linear-gradient(180deg, #ffffff, #eaf6ff);
+}
+.sobre h2,
+.curso h2,
+.cartas h2,
+.painel h2 {
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--navy);
+  font-weight: 500;
+  font-size: clamp(36px, 4vw, 55px);
+  margin-bottom: 20px;
+}
+.sobre p,
+.curso > p,
+.cartas > p {
+  max-width: 670px;
+  margin: auto;
+  color: #7189a3;
+  font-size: 14px;
+  line-height: 2;
+}
+.curso {
+  padding: 100px 8%;
+  text-align: center;
+  background: #e3f2ff;
+}
+.curso-card {
+  max-width: 450px;
+  margin: 45px auto 0;
+  padding: 45px 35px;
+  background: white;
+  border: 1px solid #dfcca3;
+  border-radius: 18px;
+  box-shadow: 0 15px 45px rgba(75, 139, 190, .1);
+}
+.curso-icone {
+  font-size: 60px;
+  color: var(--gold);
+  margin-bottom: 15px;
+}
+.curso-etiqueta {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #b28b4d;
+}
+.curso-card h3,
+.carta-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 34px;
+  margin: 15px 0;
+}
+.curso-card p,
+.carta-card p {
+  font-size: 13px;
+  line-height: 1.9;
+  color: #7e91a6;
+  margin-bottom: 25px;
+}
+.curso-card button,
+.carta-card button,
+.area-aluno-card button {
+  background: #75b9ec;
+  border: 1px solid #d6b46a;
+  border-radius: 30px;
+  color: #234c70;
+  padding: 14px 27px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  transition: background .2s ease;
+}
+.curso-card button:hover,
+.carta-card button:hover,
+.area-aluno-card button:hover {
+  background: #b9e3ff;
+}
+/* ==========================================
+   SEÇÃO DE CARTAS PÚBLICA
+   ========================================== */
+.cartas {
+  padding: 100px 8%;
+  text-align: center;
+  background: #f8fcff;
+}
+.cartas-grid {
+  max-width: 900px;
+  margin: 45px auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+.carta-card {
+  padding: 30px 24px;
+  background: white;
+  border: 1px solid #e6d6b7;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(75, 139, 190, .07);
+}
+.carta-simbolo {
+  color: #c7a363;
+  font-size: 55px;
+}
+/* ==========================================
+   TELAS INTERNAS
+   ========================================== */
+.tela-interna {
+  min-height: 100vh;
+  padding: 130px 20px 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: linear-gradient(
+    180deg,
+    #dff1ff,
+    #f8fcff 65%,
+    #eaf6ff
+  );
+}
+.painel {
+  width: 100%;
+  max-width: 520px;
+  padding: 45px;
+  background: rgba(255, 255, 255, .95);
+  border: 1px solid #d6b46a;
+  border-radius: 20px;
+  box-shadow: 0 15px 45px rgba(74, 128, 169, .12);
+  text-align: center;
+}
+.painel .sobretitulo {
+  margin-bottom: 15px;
+}
+.painel > p {
+  color: #7e91a6;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+.painel form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 10px;
+  margin: 25px 0;
+}
+.painel label {
+  color: #526e88;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 8px;
+}
+.painel input:not([type="radio"]) {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #c9dfef;
+  border-radius: 9px;
+  outline: none;
+  background: #f8fcff;
+  color: #315777;
+  font-size: 13px;
+}
+.painel input:focus {
+  border-color: #d6b46a;
+  box-shadow: 0 0 0 3px rgba(214, 180, 106, .12);
+}
+.painel form .botao-principal {
+  width: 100%;
+  margin-top: 18px;
+}
+.painel a {
+  color: #4b9bd1;
+  font-size: 12px;
+}
+.botao-voltar {
+  display: block;
+  margin: 25px auto 0;
+  padding: 12px 24px;
+  border: 1px solid #d6b46a;
+  border-radius: 25px;
+  background: white;
+  color: #526e88;
+  font-size: 11px;
+  font-weight: 600;
+  transition: background .2s ease;
+}
+.botao-voltar:hover {
+  background: #f0f8ff;
+}
+/* ==========================================
+   PAGAMENTO
+   ========================================== */
+.resumo-compra {
+  margin: 25px 0;
+  padding: 25px;
+  background: #f0f8ff;
+  border: 1px solid #e3d2ac;
+  border-radius: 14px;
+}
+.resumo-compra h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px;
+}
+.resumo-compra p {
+  color: #7e91a6;
+  font-size: 12px;
+  margin: 10px 0;
+}
+.resumo-compra strong {
+  display: block;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px;
+  color: #b28b4d;
+}
+.resumo-compra small {
+  color: #7e91a6;
+  font-size: 11px;
+}
+.opcao-pagamento {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 15px 0;
+  padding: 16px;
+  border: 1px solid #d8e7f1;
+  border-radius: 10px;
+  background: #f8fcff;
+  cursor: pointer;
+}
+.opcao-pagamento input {
+  accent-color: #75b9ec;
+}
+.aviso-pagamento {
+  margin-top: 20px;
+  font-size: 11px !important;
+}
+/* ==========================================
+   ÁREA DO ALUNO
+   ========================================== */
+.area-aluno-card {
+  margin: 20px 0;
+  padding: 25px;
+  background: #f2f9ff;
+  border: 1px solid #e1d0a9;
+  border-radius: 14px;
+}
+.area-aluno-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 27px;
+}
+.area-aluno-card p {
+  margin: 10px 0 20px;
+  color: #7e91a6;
+  font-size: 12px;
+}
+/* ==========================================
+   BIBLIOTECA DOS ARCANOS
+   ========================================== */
+.painel-biblioteca {
+  width: min(1180px, 96%);
+  max-width: 1180px;
+  padding: 42px clamp(18px, 4vw, 48px);
+}
+.painel-biblioteca > .sobretitulo {
+  display: block;
+  margin-bottom: 18px;
+}
+.painel-biblioteca > h2 {
+  margin-bottom: 14px;
+}
+.painel-biblioteca > p {
+  margin: 0 auto 34px;
+  max-width: 650px;
+  line-height: 1.8;
+}
+.painel-biblioteca .cartas-grid {
+  width: 100%;
+  max-width: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  margin: 30px auto;
+}
+.painel-biblioteca .carta-card {
+  min-width: 0;
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  text-align: center;
+  background: linear-gradient(180deg, #ffffff 0%, #f5faff 100%);
+  border: 1px solid rgba(214, 180, 106, .55);
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(76, 117, 151, .08);
+  transition: box-shadow .2s ease, border-color .2s ease;
+}
+.painel-biblioteca .carta-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 9px 24px rgba(76, 117, 151, .14);
+}
+.painel-biblioteca .imagem-carta {
+  display: block;
+  width: 100%;
+  max-width: 155px;
+  height: 205px;
+  object-fit: contain;
+  border-radius: 9px;
+  margin: 0 auto 8px;
+}
+.painel-biblioteca .carta-card .sobretitulo {
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  margin-bottom: 0;
+}
+.painel-biblioteca .carta-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  line-height: 1.4;
+  min-height: 44px;
+  margin: 0;
+}
+.painel-biblioteca .carta-card button {
+  width: 100%;
+  padding: 11px 9px;
+  border: 1px solid var(--gold);
+  border-radius: 24px;
+  background: #edf7ff;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+.painel-biblioteca .carta-card button:hover {
+  background: #e1f0fc;
+}
+/* ==========================================
+   PÁGINA INDIVIDUAL DA AULA
+   ========================================== */
+.painel-aula {
+  width: min(1080px, 96%);
+  max-width: 1080px;
+  padding: 48px clamp(20px, 5vw, 65px);
+}
+.painel-aula > .sobretitulo {
+  display: block;
+  margin: 20px 0 16px;
+  letter-spacing: 2px;
+}
+.painel-aula #aula-carta-titulo {
+  margin: 0 0 18px;
+  font-family: 'Cinzel', serif;
+  font-size: clamp(26px, 4vw, 38px);
+  line-height: 1.3;
+}
+.painel-aula #aula-carta-introducao {
+  max-width: 790px;
+  margin: 0 auto 30px;
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.9;
+}
+#aula-carta-imagem {
+  margin: 28px auto 38px;
+  text-align: center;
+}
+.imagem-carta-aula {
+  display: block;
+  width: min(230px, 70%);
+  max-height: 350px;
+  object-fit: contain;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(49, 87, 119, .13);
+}
+.aula-secao {
+  margin: 0 0 24px;
+  padding: 24px 28px;
+  text-align: left;
+  background: linear-gradient(135deg, #ffffff, #f5faff);
+  border: 1px solid rgba(214, 180, 106, .38);
+  border-left: 3px solid var(--gold);
+  border-radius: 12px;
+}
+.aula-secao h3 {
+  margin: 0 0 14px;
+  color: var(--navy);
+  font-family: 'Cinzel', serif;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.aula-secao p {
+  margin: 0 0 15px;
+  color: var(--text);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  line-height: 1.85;
+  white-space: pre-line;
+}
+.aula-secao p:last-child {
+  margin-bottom: 0;
+}
+/* ==========================================
+   NAVEGAÇÃO ENTRE AS AULAS
+   ========================================== */
+.navegacao-aulas {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 38px 0 25px;
+}
+.navegacao-aulas button {
+  min-width: 190px;
+  padding: 14px 22px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  background: linear-gradient(135deg, #f8fcff, #eaf5ff);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  box-shadow: 0 4px 12px rgba(49, 87, 119, .08);
+  transition: background .2s ease, box-shadow .2s ease;
+}
+.navegacao-aulas button:hover:not(:disabled) {
+  background: #e0effb;
+  box-shadow: 0 6px 16px rgba(49, 87, 119, .13);
+}
+.navegacao-aulas button:disabled {
+  opacity: .4;
+  cursor: not-allowed;
+}
+.painel-aula > .botao-voltar {
+  padding: 12px 24px;
+  border: 1px solid rgba(214, 180, 106, .8);
+  border-radius: 28px;
+  background: #ffffff;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 600;
+}
+.painel-aula > .botao-voltar:hover {
+  background: #f0f8ff;
+}
+/* ==========================================
+   RODAPÉ
+   ========================================== */
+footer {
+  padding: 55px 20px;
+  text-align: center;
+  background: #315777;
+  color: #eaf6ff;
+}
+.logo-footer {
+  display: flex;
+  width: max-content;
+  margin: 0 auto 20px;
+}
+footer p {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+footer > small {
+  color: #c4dced;
+  font-size: 10px;
+}
+/* ==========================================
+   TABLETS
+   ========================================== */
+@media (max-width: 1000px) {
+  .topo {
+    padding: 0 4%;
+  }
+  nav {
+    gap: 17px;
+  }
+  .hero-texto {
+    width: 65%;
+  }
+  .painel-biblioteca .cartas-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+/* ==========================================
+   CELULARES
+   ========================================== */
+@media (max-width: 650px) {
+  .topo {
+    min-height: 0;
+    height: auto;
+    padding: 18px;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .logo {
+    width: 100%;
+    align-items: center;
+  }
+  nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  nav a {
+    font-size: 10px;
+  }
+  .botao-entrar {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    padding: 9px 14px;
+    font-size: 10px;
+  }
+  .hero {
+    min-height: 780px;
+    height: auto;
+    padding: 190px 7% 150px;
+    align-items: flex-start;
+  }
+  .ceu-cenario {
+    background-position: 58% center;
+  }
+  .ceu-cenario::after {
+    background: linear-gradient(
+      90deg,
+      rgba(7, 31, 62, .82),
+      rgba(10, 43, 78, .35)
+    );
+  }
+  .hero-texto {
+    width: 100%;
+  }
+  .hero h1 {
+    font-size: 55px;
+  }
+  .indicador {
+    font-size: 8px;
+    letter-spacing: 1px;
+    gap: 8px;
+  }
+  .sobre,
+  .curso,
+  .cartas {
+    padding: 75px 7%;
+  }
+  .cartas-grid {
+    grid-template-columns: 1fr;
+  }
+  .painel {
+    padding: 30px 22px;
+  }
+  .tela-interna {
+    padding: 110px 14px 50px;
+  }
+  .painel-biblioteca,
+  .painel-aula {
+    width: 100%;
+    padding: 30px 16px;
+  }
+  .painel-biblioteca .cartas-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  .painel-biblioteca .carta-card {
+    padding: 14px 9px;
+    gap: 9px;
+  }
+  .painel-biblioteca .imagem-carta {
+    height: 155px;
+    max-width: 115px;
+  }
+  .painel-biblioteca .carta-card h3 {
+    font-size: 13px;
+    min-height: 38px;
+  }
+  .painel-biblioteca .carta-card button {
+    font-size: 10px;
+    padding: 10px 5px;
+  }
+  .painel-aula #aula-carta-titulo {
+    font-size: 25px;
+  }
+  .painel-aula #aula-carta-introducao {
+    font-size: 14px;
+  }
+  .aula-secao {
+    padding: 19px 17px;
+    margin-bottom: 17px;
+  }
+  .aula-secao h3 {
+    font-size: 17px;
+  }
+  .aula-secao p {
+    font-size: 18px;
+    line-height: 1.75;
+  }
+  .navegacao-aulas {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .navegacao-aulas button {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+/* ==========================================
+   ESCOLHA ENTRE OS DOIS MÓDULOS
+   ========================================== */
+#tela-arcanos-maiores .painel {
+  width: min(1480px, 96%);
+  max-width: 1480px;
+  padding: 50px clamp(22px, 5vw, 75px);
+}
+#tela-arcanos-maiores #galeria-arcanos-maiores {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+#tela-arcanos-maiores .descricao-escolha-biblioteca {
+  max-width: 650px;
+  margin: 0 auto 35px;
+  color: #7189a3;
+  font-size: 14px;
+  line-height: 1.9;
+  text-align: center;
+}
+#tela-arcanos-maiores .selecao-bibliotecas {
+  width: 100%;
+  max-width: 850px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
+  margin: 0 auto 30px;
+}
+#tela-arcanos-maiores .biblioteca-opcao {
+  min-width: 0;
+  min-height: 360px;
+  padding: 36px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(180deg, #ffffff 0%, #f5faff 100%);
+  border: 1px solid rgba(214, 180, 106, .65);
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(76, 117, 151, .08);
+}
+#tela-arcanos-maiores .biblioteca-simbolo {
+  color: #c7a363;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 58px;
+  line-height: 1;
+  margin-bottom: 22px;
+}
+#tela-arcanos-maiores .biblioteca-quantidade {
+  color: #b28b4d;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+#tela-arcanos-maiores .biblioteca-opcao h3 {
+  color: var(--navy);
+  font-family: 'Cinzel', serif;
+  font-size: clamp(19px, 2vw, 25px);
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+#tela-arcanos-maiores .biblioteca-opcao p {
+  max-width: 320px;
+  color: #7189a3;
+  font-size: 13px;
+  line-height: 1.9;
+  margin: 0 0 22px;
+}
+#tela-arcanos-maiores .biblioteca-opcao button {
+  width: 100%;
+  max-width: 260px;
+  padding: 14px 22px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  background: #edf7ff;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+#tela-arcanos-maiores .biblioteca-opcao button:hover {
+  background: #e1f0fc;
+}
+@media (max-width: 650px) {
+  #tela-arcanos-maiores .painel {
+    width: 100%;
+    padding: 32px 18px;
+  }
+  #tela-arcanos-maiores .selecao-bibliotecas {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  #tela-arcanos-maiores .biblioteca-opcao {
+    min-height: 300px;
+    padding: 28px 22px;
+  }
+}
+
+/* ==========================================
+   AJUSTE DA GALERIA — ARCANOS MAIORES E MENORES
+   Cartas lado a lado e botões padronizados
+   ========================================== */
+#tela-arcanos-maiores #galeria-arcanos-maiores {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  justify-items: stretch;
+  gap: 22px;
+  margin: 0 auto;
+}
+
+/* Elementos de navegação ocupam a largura inteira */
+#tela-arcanos-maiores #galeria-arcanos-maiores > .descricao-escolha-biblioteca,
+#tela-arcanos-maiores #galeria-arcanos-maiores > .botao-navegar-biblioteca,
+#tela-arcanos-maiores #galeria-arcanos-maiores > .seletor-naipes,
+#tela-arcanos-maiores #galeria-arcanos-maiores > h3 {
+  grid-column: 1 / -1;
+}
+
+#tela-arcanos-maiores #galeria-arcanos-maiores > .descricao-escolha-biblioteca {
+  width: 100%;
+  max-width: 680px;
+  justify-self: center;
+  margin: 0 auto 12px;
+  text-align: center;
+}
+
+/* Botões de trocar de biblioteca */
+#tela-arcanos-maiores #galeria-arcanos-maiores > .botao-navegar-biblioteca {
+  justify-self: center;
+  width: auto;
+  min-width: 230px;
+  max-width: 100%;
+  margin: 0 auto 8px;
+  padding: 13px 25px;
+  border: 1px solid var(--gold);
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ffffff, #edf7ff);
+  color: var(--navy);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .2px;
+  box-shadow: 0 4px 13px rgba(49, 87, 119, .07);
+  transition: background .2s ease, box-shadow .2s ease;
+}
+
+#tela-arcanos-maiores #galeria-arcanos-maiores > .botao-navegar-biblioteca:hover {
+  background: #e4f2fc;
+  box-shadow: 0 6px 16px rgba(49, 87, 119, .12);
+}
+
+/* Cartões individuais das 22 e das 56 cartas */
+#tela-arcanos-maiores #galeria-arcanos-maiores > .carta-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 190px;
+  margin: 0;
+  padding: 22px 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  text-align: center;
+  background: linear-gradient(180deg, #ffffff 0%, #f5faff 100%);
+  border: 1px solid rgba(214, 180, 106, .65);
+  border-radius: 18px;
+  box-shadow: 0 7px 20px rgba(76, 117, 151, .07);
+}
+
+#tela-arcanos-maiores #galeria-arcanos-maiores > .carta-card .sobretitulo {
+  margin: 0;
+  color: #b28b4d;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+#tela-arcanos-maiores #galeria-arcanos-maiores > .carta-card h3 {
+  width: 100%;
+  min-height: 42px;
+  margin: 0;
+  color: var(--navy);
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+#tela-arcanos-maiores #galeria-arcanos-maiores > .carta-card button {
+  width: 100%;
+  min-height: 43px;
+  margin-top: auto;
+  padding: 11px 12px;
+  border: 1px solid var(--gold);
+  border-radius: 28px;
+  background: #edf7ff;
+  color: var(--navy);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+  box-shadow: none;
+  transition: background .2s ease, box-shadow .2s ease;
+}
+
+#tela-arcanos-maiores #galeria-arcanos-maiores > .carta-card button:hover {
+  background: #deeffc;
+  box-shadow: 0 4px 12px rgba(49, 87, 119, .09);
+}
+
+/* Seletor dos quatro naipes */
+#tela-arcanos-maiores #galeria-arcanos-maiores > .seletor-naipes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 2px auto 8px;
+  padding: 20px 15px;
+  background: #f5faff;
+  border: 1px solid rgba(214, 180, 106, .45);
+  border-radius: 16px;
+}
+
+#tela-arcanos-maiores #galeria-arcanos-maiores > .seletor-naipes h3 {
+  flex: 0 0 100%;
+  margin: 0 0 5px;
+  color: var(--navy);
+  font-family: 'Cinzel', serif;
+  font-size: 18px;
+  text-align: center;
+}
+
+#tela-arcanos-maiores #galeria-arcanos-maiores .botao-naipe {
+  min-width: 112px;
+  padding: 11px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 28px;
+  background: #ffffff;
+  color: var(--navy);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  transition: background .2s ease, color .2s ease;
+}
+
+#tela-arcanos-maiores #galeria-arcanos-maiores .botao-naipe:hover,
+#tela-arcanos-maiores #galeria-arcanos-maiores .botao-naipe.ativo {
+  background: #e4f1fb;
+  border-color: #c7a363;
+  color: #315777;
+}
+
+/* Título do naipe selecionado */
+#tela-arcanos-maiores #galeria-arcanos-maiores > h3 {
+  margin: 4px 0 8px;
+  color: var(--navy);
+  font-family: 'Cinzel', serif;
+  font-size: 21px;
+  text-align: center;
+}
+
+@media (max-width: 1000px) {
+  #tela-arcanos-maiores #galeria-arcanos-maiores {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 650px) {
+  #tela-arcanos-maiores #galeria-arcanos-maiores {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  #tela-arcanos-maiores #galeria-arcanos-maiores > .carta-card {
+    min-height: 175px;
+    padding: 16px 10px;
+    gap: 10px;
+  }
+
+  #tela-arcanos-maiores #galeria-arcanos-maiores > .carta-card h3 {
+    font-size: 13px;
+    min-height: 38px;
+  }
+
+  #tela-arcanos-maiores #galeria-arcanos-maiores > .carta-card button {
+    min-height: 40px;
+    padding: 9px 6px;
+    font-size: 10px;
+  }
+
+  #tela-arcanos-maiores #galeria-arcanos-maiores > .botao-navegar-biblioteca {
+    min-width: 0;
+    width: auto;
+    padding: 11px 18px;
+    font-size: 11px;
+  }
+
+  #tela-arcanos-maiores #galeria-arcanos-maiores .botao-naipe {
+    min-width: 0;
+    flex: 1 1 calc(50% - 10px);
+    padding: 10px 12px;
+  }
+}
+
+/* ==========================================
+   CORREÇÃO DE LAYOUT — TELA DE ESCOLHA E VOLTAR
+   ========================================== */
+
+/* Mantém o texto e os dois módulos em linhas próprias */
+#tela-arcanos-maiores #galeria-arcanos-maiores > .descricao-escolha-biblioteca {
+  grid-column: 1 / -1 !important;
+  width: 100%;
+  max-width: 680px;
+  justify-self: center;
+  margin: 0 auto 12px;
+  text-align: center;
+}
+
+#tela-arcanos-maiores #galeria-arcanos-maiores > .selecao-bibliotecas {
+  grid-column: 1 / -1 !important;
+  justify-self: center;
+  width: min(850px, 100%);
+  max-width: 850px;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 28px;
+  margin: 0 auto 30px;
+}
+
+#tela-arcanos-maiores #galeria-arcanos-maiores > .selecao-bibliotecas > .biblioteca-opcao {
+  width: 100%;
+  min-width: 0;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 30px;
+  text-align: center;
+}
+
+/* Botão de voltar sempre fica compacto, nunca ocupa metade da tela */
+button.botao-voltar,
+a.botao-voltar,
+.botao-voltar {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center;
+  justify-content: center;
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: calc(100% - 24px) !important;
+  height: auto !important;
+  min-height: 44px !important;
+  max-height: none !important;
+  margin: 25px auto 0 !important;
+  padding: 12px 24px !important;
+  border: 1px solid var(--gold) !important;
+  border-radius: 28px !important;
+  background: #ffffff !important;
+  color: var(--navy) !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+  text-align: center;
+  text-decoration: none;
+  white-space: normal;
+  box-shadow: 0 4px 12px rgba(49, 87, 119, .07);
+  cursor: pointer;
+}
+
+button.botao-voltar:hover,
+a.botao-voltar:hover,
+.botao-voltar:hover {
+  background: #f0f8ff !important;
+}
+
+@media (max-width: 650px) {
+  #tela-arcanos-maiores #galeria-arcanos-maiores > .selecao-bibliotecas {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  #tela-arcanos-maiores #galeria-arcanos-maiores > .selecao-bibliotecas > .biblioteca-opcao {
+    min-height: 300px;
+    padding: 28px 22px;
+  }
+}
+
+/* ==========================================
+   AJUSTE FINAL DA BIBLIOTECA ÉTER
+   Quatro cartas por linha e botão voltar correto
+   ========================================== */
+
+/* A galeria principal organiza os elementos em linhas completas */
+#tela-arcanos-maiores #galeria-arcanos-maiores {
+  width: 100%;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  align-items: stretch;
+  justify-items: stretch;
+  gap: 22px;
+}
+
+/* Navegação e títulos ocupam a linha inteira */
+#tela-arcanos-maiores #galeria-arcanos-maiores > .botao-navegar-biblioteca,
+#tela-arcanos-maiores #galeria-arcanos-maiores > .seletor-naipes,
+#tela-arcanos-maiores #galeria-arcanos-maiores > .titulo-naipe,
+#tela-arcanos-maiores #galeria-arcanos-maiores > h3 {
+  grid-column: 1 / -1 !important;
+}
+
+/* Galeria interna dos Arcanos Menores também ocupa toda a largura */
+#tela-arcanos-maiores #galeria-arcanos-maiores > .galeria-menores {
+  grid-column: 1 / -1 !important;
+  width: 100% !important;
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 22px !important;
+  margin: 0 auto;
+}
+
+/* Cartões com dimensões e alinhamento consistentes */
+#tela-arcanos-maiores .carta-card {
+  width: 100%;
+  min-width: 0;
+  min-height: 195px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 22px 16px;
+  text-align: center;
+  background: linear-gradient(180deg, #ffffff 0%, #f5faff 100%);
+  border: 1px solid rgba(214, 180, 106, .65);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(76, 117, 151, .08);
+}
+
+#tela-arcanos-maiores .carta-card .sobretitulo {
+  margin: 0;
+  color: #b28b4d;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-align: center;
+}
+
+#tela-arcanos-maiores .carta-card h3 {
+  margin: 0;
+  color: var(--navy);
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  line-height: 1.45;
+  text-align: center;
+}
+
+#tela-arcanos-maiores .carta-card > button {
+  width: 100%;
+  min-height: 44px;
+  padding: 11px 10px;
+  border: 1px solid var(--gold);
+  border-radius: 28px;
+  background: #edf7ff;
+  color: var(--navy);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+#tela-arcanos-maiores .carta-card > button:hover {
+  background: #e1f0fc;
+}
+
+/* Botões de navegação entre as bibliotecas */
+#tela-arcanos-maiores #galeria-arcanos-maiores > .botao-navegar-biblioteca {
+  justify-self: center;
+  width: fit-content;
+  min-width: 230px;
+  max-width: 100%;
+  margin: 4px auto 12px;
+  padding: 12px 24px;
+  border: 1px solid var(--gold);
+  border-radius: 28px;
+  background: #ffffff;
+  color: var(--navy);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(49, 87, 119, .07);
+}
+
+/* Seletor dos quatro naipes */
+#tela-arcanos-maiores .seletor-naipes {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 8px auto 12px;
+}
+
+#tela-arcanos-maiores .seletor-naipes h3 {
+  flex: 0 0 100%;
+  margin: 0 0 4px;
+  text-align: center;
+  color: var(--navy);
+  font-family: 'Cinzel', serif;
+}
+
+#tela-arcanos-maiores .seletor-naipes .botao-naipe {
+  min-width: 110px;
+  padding: 11px 20px;
+  border: 1px solid var(--gold);
+  border-radius: 26px;
+  background: #ffffff;
+  color: var(--navy);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+#tela-arcanos-maiores .seletor-naipes .botao-naipe.ativo {
+  background: #eaf5ff;
+  border-color: var(--gold);
+}
+
+#tela-arcanos-maiores .titulo-naipe {
+  margin: 8px 0 4px;
+  color: var(--navy);
+  font-family: 'Cinzel', serif;
+  text-align: center;
+}
+
+/* CORREÇÃO DO NOME REAL DA CLASSE DO BOTÃO VOLTAR */
+#tela-arcanos-maiores #galeria-arcanos-maiores > .botao-voltar-biblioteca {
+  grid-column: 1 / -1 !important;
+  justify-self: center !important;
+  align-self: center;
+  display: inline-flex !important;
+  flex: 0 0 auto !important;
+  align-items: center;
+  justify-content: center;
+  width: fit-content !important;
+  min-width: 0 !important;
+  max-width: calc(100% - 24px) !important;
+  min-height: 44px;
+  height: auto !important;
+  margin: 24px auto 0 !important;
+  padding: 12px 26px !important;
+  border: 1px solid var(--gold) !important;
+  border-radius: 28px !important;
+  background: #ffffff !important;
+  color: var(--navy) !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  line-height: 1.4;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(49, 87, 119, .07);
+  cursor: pointer;
+}
+
+#tela-arcanos-maiores #galeria-arcanos-maiores > .botao-voltar-biblioteca:hover {
+  background: #f0f8ff !important;
+}
+
+/* Tablets: três cartas por linha */
+@media (max-width: 1000px) {
+  #tela-arcanos-maiores #galeria-arcanos-maiores {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+  #tela-arcanos-maiores #galeria-arcanos-maiores > .galeria-menores {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+/* Celulares: duas cartas por linha */
+@media (max-width: 650px) {
+  #tela-arcanos-maiores #galeria-arcanos-maiores {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px;
+  }
+  #tela-arcanos-maiores #galeria-arcanos-maiores > .galeria-menores {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+  }
+  #tela-arcanos-maiores .carta-card {
+    min-height: 175px;
+    padding: 16px 10px;
+  }
+  #tela-arcanos-maiores .carta-card h3 {
+    font-size: 13px;
+  }
+  #tela-arcanos-maiores .carta-card > button {
+    padding: 10px 6px;
+    font-size: 10px;
+  }
+  #tela-arcanos-maiores .seletor-naipes .botao-naipe {
+    flex: 1 1 calc(50% - 12px);
+    min-width: 0;
+  }
+}
